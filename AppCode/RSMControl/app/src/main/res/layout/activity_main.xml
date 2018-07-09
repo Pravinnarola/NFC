@@ -1,0 +1,68 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:baselineAligned="false"
+    android:padding="10dp">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="false">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/nfcStatusString"
+            android:id="@+id/statusTextView"
+            android:layout_marginBottom="10dp"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+            android:textStyle="italic" />
+
+        <Button
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/programButtonName"
+            android:id="@+id/programButton"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:enabled="true"
+            android:onClick="onProgramButtonClicked"
+            style="@style/TextAppearance.AppCompat.Medium.Inverse"
+            android:singleLine="false"
+            android:padding="10dp"
+            android:layout_marginTop="20dp" />
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editToggleSwitch"
+            android:layout_gravity="right"
+            android:onClick="onEditSwitchToggled"
+            android:layout_below="@+id/statusTextView"
+            android:layout_alignParentRight="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Modify Device Settings"
+            android:layout_gravity="right"
+            android:layout_toLeftOf="@+id/editToggleSwitch"
+            android:layout_below="@+id/statusTextView"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+            android:textStyle="italic" />
+
+        <ListView
+            android:layout_below="@+id/editToggleSwitch"
+            android:layout_above="@+id/programButton"
+            android:id="@+id/deviceInfoListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </ListView>
+
+
+    </RelativeLayout>
+</LinearLayout>
